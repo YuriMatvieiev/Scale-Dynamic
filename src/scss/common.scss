@@ -1,0 +1,70 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.orange-button {
+  line-height: math.div(40, 18);
+  font-family: "Oswald";
+  font-weight: 600;
+  color: #fff;
+  padding: 5px 40px;
+  border-radius: 24px;
+  background: $orange;
+  text-transform: uppercase;
+  transition: background 0.3s;
+  @media (any-hover: hover) {
+    &:hover {
+      background: #dd4e27;
+    }
+  }
+}
+.orange-text {
+  color: $orange;
+}
+
+.white-title {
+  font-family: "Oswald";
+  font-weight: 500;
+  @include adaptiveValue("font-size", 50, 28);
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.black-title {
+  @include adaptiveValue("font-size", 50, 28);
+  font-family: "Oswald";
+  font-weight: 500;
+  line-height: 128%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.main-copy {
+  @include adaptiveValue("font-size", 18, 15);
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  letter-spacing: 0.4px;
+  margin-bottom: toRem(65);
+  @media (max-width: $mobile) {
+    margin-bottom: toRem(20);
+    line-height: 146%;
+  }
+}
+
+.white-card {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  max-width: 500px;
+  text-align: center;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0px 8px 26px 0px rgba(0, 0, 0, 0.09);
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background: $orange;
+  }
+}

@@ -1,0 +1,82 @@
+.header {
+  // .header__container
+  &__container {
+    max-width: 1360px;
+  }
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 27px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+    @media (max-width: $mobile) {
+      padding: 13px 0 22px;
+    }
+  }
+  // .header__logo
+  &__logo {
+    img {
+      width: toRem(147);
+      @media (max-width: $mobile) {
+        width: toRem(117);
+      }
+    }
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+  // .header__menu
+  &__menu {
+  }
+  // .header__coontact
+  &__coontact {
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+}
+
+.menu {
+  display: none;
+  @media (max-width: $mobile) {
+    display: block;
+    padding: 10px;
+    background: $orange;
+    border-radius: 4px;
+  }
+  // .menu__icon
+  &__icon {
+  }
+  // .menu__body
+  &__body {
+  }
+  // .menu__list
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+  // .menu__item
+  &__item {
+  }
+  // .menu__link
+  &__link {
+    font-size: toRem(17);
+    line-height: math.div(40, 17);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 10px;
+    letter-spacing: 1px;
+    color: $gray;
+    transition: color 0.3s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+}
