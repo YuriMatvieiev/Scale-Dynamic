@@ -2,23 +2,42 @@
 <html lang="en">
 
 <head>
-	<title>HomePage</title>
+	<title>Scale Dynamic</title>
 	<meta charset="UTF-8" />
 	<meta name="format-detection" content="telephone=no" />
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240117010520" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20240117235123" />
 	<link rel="shortcut icon" href="favicon.ico" />
 	<meta name="robots" content="noindex, nofollow" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- SEO Tags -->
+	<meta name="description" content="Your website description goes here." />
+	<meta name="keywords" content="your, keywords, go, here" />
+	<meta name="author" content="Your Name" />
+
+	<!-- Open Graph Protocol (OGP) tags -->
+	<meta property="og:title" content="Scale Dynamic" />
+	<meta property="og:description" content="Your Open Graph description goes here." />
+	<meta property="og:image" content="url_to_your_image" />
+	<meta property="og:url" content="url_to_your_page" />
+	<meta property="og:type" content="website" />
+
+	<!-- Twitter Card tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@yourtwitterhandle" />
+	<meta name="twitter:title" content="Scale Dynamic" />
+	<meta name="twitter:description" content="Your Twitter Card description goes here." />
+	<meta name="twitter:image" content="url_to_your_image" />
 </head>
 
 <body>
-	<div class="wrapper">
+	<div class="wrapper home">
 		<header class="header">
 			<div class="header__container">
 				<div class="header__wrap">
 					<a href="/" class="header__logo">
-						<picture><source srcset="img/logo-small.webp" type="image/webp"><img src="img/logo-small.png" alt="" /></picture>
+						<picture><source srcset="img/logo-small-x1.5.webp" type="image/webp"><img src="img/logo-small-x1.5.png" alt="" /></picture>
 					</a>
 
 					<div class="header__nav">
@@ -27,11 +46,16 @@
 								<li class="menu__item"><a href="/" class="menu__link">Home</a></li>
 								<li class="menu__item"><a href="#" class="menu__link">About</a></li>
 								<li class="menu__item">
-									<a href="#" class="menu__link _icon-caret-down">Solutions </a>
+									<button class="menu__link _icon-caret-down">Solutions</button>
+									<ul class="menu__item-submenu">
+										<li><a href="#" class="menu__link">Lead Generation</a></li>
+										<li><a href="#" class="menu__link">Managed Media Buys</a></li>
+										<li><a href="#" class="menu__link">Creative Production</a></li>
+									</ul>
 								</li>
 							</ul>
+							<a href="contact-us.html" class="orange-button header__coontact">Contact Us</a>
 						</nav>
-						<a href="#" class="orange-button header__coontact">Contact Us</a>
 						<div class="header__menu menu">
 							<button type="button" class="menu__icon icon-menu">
 								<span></span>
@@ -69,7 +93,7 @@
 						</div>
 					</div>
 					<div class="hero__right">
-						<picture><source srcset="img/home/phones-2.webp" type="image/webp"><img class="hero__right-phones ibg ibg--contain" src="img/home/phones-2.png" alt="" /></picture>
+						<picture><source srcset="img/home/phones-2.webp" type="image/webp"><img class="hero__right-picture ibg ibg--contain" src="img/home/phones-2.png" alt="" /></picture>
 						<div class="hero__orange-tag">
 							<div class="hero__tag-title">Total Calls</div>
 							<div class="hero__tag-number">25K</div>
@@ -172,7 +196,7 @@
 						using is that it normal distribution.
 					</div>
 					<div class="process__wrap">
-						<picture><source srcset="img/logo-small.webp" type="image/webp"><img src="img/logo-small.png" alt="" class="process__logo" /></picture>
+						<picture><source srcset="img/logo-small-x1.5.webp" type="image/webp"><img src="img/logo-small-x1.5.png" alt="" class="process__logo" /></picture>
 						<div class="process__pink-circle"></div>
 						<div class="process__dashed-circle"></div>
 						<div class="process__items">
@@ -321,35 +345,37 @@
 							</div>
 						</div>
 					</div>
-					<form action="#" class="main-contact__form">
-						<div class="main-contact__form-row">
-							<input placeholder="Name" type="text" name="name" id="name" />
-							<input placeholder="Company Name" type="text" name="company" id="company" />
-						</div>
-						<div class="main-contact__form-row">
-							<input placeholder="Phone" type="text" name="phone" id="phone" />
-							<input placeholder="Job Tile" type="text" name="job" id="job" />
-						</div>
-						<div class="main-contact__form-row">
-							<input placeholder="Email Address" type="email" name="email" id="email" />
-						</div>
-						<div class="main-contact__form-row main-contact__form-select _icon-angle-down">
-							<select name="industry" id="industry">
-								<option selected disabled>Check Your Industry</option>
-								<option value="Option 1">Option 1</option>
-								<option value="Option 2">Option 2</option>
-								<option value="Option 3">Option 3</option>
-							</select>
-						</div>
-						<div class="main-contact__form-row">
-							<textarea name="comments" placeholder="Comments" id="comments" cols="30" rows="5"></textarea>
-						</div>
-						<div class="main-contact__form-row">
-							<button class="orange-button" type="submit">
-								Get your leads
-							</button>
-						</div>
-					</form>
+					<div class="form-wrap main-contact__form-wrap">
+						<form action="#" class="form main-contact__form">
+							<div class="form-row main-contact__form-row">
+								<input placeholder="Name" type="text" name="name" id="name" />
+								<input placeholder="Company Name" type="text" name="company" id="company" />
+							</div>
+							<div class="form-row main-contact__form-row">
+								<input placeholder="Phone" type="text" name="phone" id="phone" />
+								<input placeholder="Job Tile" type="text" name="job" id="job" />
+							</div>
+							<div class="form-row main-contact__form-row">
+								<input placeholder="Email Address" type="email" name="email" id="email" />
+							</div>
+							<div class="form-row form-select main-contact__form-row main-contact__form-select _icon-angle-down">
+								<select name="industry" id="industry">
+									<option selected disabled>Check Your Industry</option>
+									<option value="Option 1">Option 1</option>
+									<option value="Option 2">Option 2</option>
+									<option value="Option 3">Option 3</option>
+								</select>
+							</div>
+							<div class="form-row main-contact__form-row">
+								<textarea name="comments" placeholder="Comments" id="comments" cols="30" rows="5"></textarea>
+							</div>
+							<div class="form-row main-contact__form-row">
+								<button class="orange-button" type="submit">
+									Get your leads
+								</button>
+							</div>
+						</form>
+					</div>
 				</div>
 			</section>
 		</main>
@@ -357,8 +383,8 @@
 			<div class="footer__container">
 				<div class="footer__top">
 					<div class="footer__logo">
-						<a href="#" class="footer__logo-link">
-							<picture><source srcset="img/logo-small.webp" type="image/webp"><img src="img/logo-small.png" alt="" /></picture>
+						<a href="/" class="footer__logo-link">
+							<picture><source srcset="img/logo-small-x1.5.webp" type="image/webp"><img src="img/logo-small-x1.5.png" alt="" /></picture>
 						</a>
 					</div>
 					<div class="footer__menu">
@@ -368,7 +394,7 @@
 								<li><a href="#">Home</a></li>
 								<li><a href="#">Solutions</a></li>
 								<li><a href="#">About Us</a></li>
-								<li><a href="#">Contact Us</a></li>
+								<li><a href="contact-us.html">Contact Us</a></li>
 							</ul>
 						</nav>
 						<nav class="footer__menu-item">
@@ -403,7 +429,7 @@
 		</footer>
 
 	</div>
-	<script src="js/app.min.js?_v=20240117010520"></script>
+	<script src="js/app.min.js?_v=20240117235123"></script>
 </body>
 
 </html>

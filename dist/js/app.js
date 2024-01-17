@@ -68,6 +68,35 @@
             }));
         }
     }), 0);
+    const submenuButton = document.querySelector(".menu__item button");
+    const submenu = document.querySelector(".menu__item-submenu");
+    function showSubmenu() {
+        submenu.classList.add("active");
+    }
+    function hideSubmenu() {
+        submenu.classList.remove("active");
+    }
+    function toggleSubmenu() {
+        if (window.innerWidth <= 767.98) submenuButton.addEventListener("click", (() => {
+            submenu.classList.toggle("active");
+        })); else {
+            submenuButton.addEventListener("mouseover", showSubmenu);
+            submenuButton.addEventListener("mouseout", hideSubmenu);
+            submenu.addEventListener("mouseover", showSubmenu);
+            submenu.addEventListener("mouseout", hideSubmenu);
+        }
+    }
+    if (submenu) {
+        toggleSubmenu();
+        window.addEventListener("resize", (() => {
+            submenuButton.removeEventListener("mouseover", showSubmenu);
+            submenuButton.removeEventListener("mouseout", hideSubmenu);
+            submenuButton.removeEventListener("click", toggleSubmenu);
+            submenu.removeEventListener("mouseover", showSubmenu);
+            submenu.removeEventListener("mouseout", hideSubmenu);
+            toggleSubmenu();
+        }));
+    }
     window["FLS"] = true;
     isWebp();
     menuInit();

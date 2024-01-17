@@ -68,3 +68,96 @@
     background: $orange;
   }
 }
+
+.bold {
+  font-weight: 700;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+
+  &-wrap {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  &-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 15px;
+    @media (max-width: $mobileSmall) {
+      flex-direction: column;
+      align-items: center;
+    }
+    label {
+      font-weight: 500;
+      color: #fff;
+    }
+    input {
+      width: 100%;
+      font-size: toRem(16);
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 5px;
+      background: #fff;
+      line-height: 120%;
+      color: $mainColor;
+      outline: none;
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.7);
+      }
+    }
+    select {
+      width: 100%;
+      font-size: toRem(16);
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 5px;
+      background: #fff;
+      line-height: 120%;
+      color: rgba(0, 0, 0, 0.7);
+      appearance: none;
+      outline: none;
+      cursor: pointer;
+    }
+    textarea {
+      width: 100%;
+      font-size: toRem(16);
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 5px;
+      background: #fff;
+
+      line-height: 120%;
+      color: $mainColor;
+      outline: none;
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.7);
+      }
+    }
+    button {
+      width: 100%;
+    }
+  }
+  &-col {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    @media (max-width: $mobile) {
+      gap: 10px;
+    }
+  }
+  &-select {
+    position: relative;
+    &::before {
+      position: absolute;
+      top: 50%;
+      right: 22px;
+      transform: translate(-50%, -50%);
+      font-size: toRem(24);
+    }
+  }
+}

@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  @@include('html/_head.htm',{ "title":"Contact Us" })
+  <body>
+    <div class="wrapper contact-us">
+      @@include('html/_header.htm',{})
+      <main class="page">
+        <section class="hero">
+          <div class="hero__container">
+            <div class="hero__left">
+              <h1 class="hero__title black-title">
+                <span class="orange-text">LET'S TALK GROWTH</span>
+                FOR YOUR <span class="orange-text">BUSINESS</span>
+              </h1>
+
+              <div class="hero__select-title">What is Your Industry?</div>
+              <div class="hero__select-wrap _icon-angle-down">
+                <select name="solution" id="solution" class="hero__select">
+                  <option selected disabled>Check Your Industry</option>
+                  <option value="Option 1">Option 1</option>
+                  <option value="Option 2">Option 2</option>
+                  <option value="Option 3">Option 3</option>
+                </select>
+              </div>
+            </div>
+            <div class="hero__right">
+              <img
+                class="hero__right-picture ibg ibg--contain"
+                src="@img/contact-us/hero-image.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <img class="hero__line" src="@img/home/line.png" alt="" />
+        </section>
+        <section class="call-action">
+          <div class="call-action__container">
+            <h3 class="white-title call-action__title">
+              <span class="orange-text">CONTACT</span> US DIRECTLY
+            </h3>
+            <div class="main-copy call-action__desc">
+              Prefer to chat with someone?
+              <span class="bold"
+                >Fill out the form below and a specialist will contact you right
+                away.</span
+              >
+            </div>
+          </div>
+        </section>
+        <section class="contacts">
+          <div class="contacts__container">
+            <div class="contacts__top">
+              <img
+                class="contacts__top-woman-img"
+                src="@img/contact-us/contact-woman.png"
+                alt=""
+              />
+              <div class="contacts__top-text">
+                <h3 class="black-title contacts__top-title">
+                  <span class="orange-text">Let’s get</span> started
+                </h3>
+                <div class="main-copy contacts__top-desc">
+                  Prefer to chat with someone?
+                  <div class="bold">
+                    Fill out the form below and a specialist will contact you
+                    right away.
+                  </div>
+                </div>
+                <div class="contacts__top-info">
+                  <div class="contacts__top-item">
+                    <img
+                      class="contacts__top-item-icon"
+                      src="@img/contact-us/phone-icon.png"
+                      alt=""
+                    />
+                    <div class="contacts__top-item-title">Phone:</div>
+                    <a
+                      href="tel:1234567890"
+                      class="contacts__top-item-info contacts__top-item-phone"
+                      >(123) 456-7890</a
+                    >
+                  </div>
+                  <div class="contacts__top-item">
+                    <img
+                      class="contacts__top-item-icon"
+                      src="@img/contact-us/email-icon.png"
+                      alt=""
+                    />
+                    <div class="contacts__top-item-title">Email:</div>
+                    <a
+                      href="mailto:Info@scaledynamiv.com"
+                      class="contacts__top-item-info"
+                      >Info@scaledynamiv.com</a
+                    >
+                  </div>
+                  <div class="contacts__top-item">
+                    <img
+                      class="contacts__top-item-icon"
+                      src="@img/contact-us/map-icon.png"
+                      alt=""
+                    />
+                    <div class="contacts__top-item-title">Location:</div>
+                    <div class="contacts__top-item-info">
+                      121 12 S Front Ave Chicago Il 60628
+                    </div>
+                  </div>
+                  <ul class="contacts__top-item-socials">
+                    <li><a class="_icon-facebook" href="#"></a></li>
+                    <li><a class="_icon-linkedin" href="#"></a></li>
+                    <li><a class="_icon-twitter" href="#"></a></li>
+                    <li><a class="_icon-instagram" href="#"></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="form-wrap contacts__form-wrap">
+                <div class="contacts__form-title">Let's Talk Growth</div>
+                <form action="#" class="form contacts__form">
+                  <div class="form-row contacts__form-row">
+                    <div class="form-col">
+                      <label for="name">Full Name*</label>
+                      <input type="text" name="name" id="name" />
+                    </div>
+                    <div class="form-col">
+                      <label for="company">Company Name*</label>
+                      <input type="text" name="company" id="company" />
+                    </div>
+                  </div>
+                  <div class="form-row contacts__form-row">
+                    <div class="form-col">
+                      <label for="phone">Phone Number*</label>
+                      <input type="text" name="phone" id="phone" />
+                    </div>
+                    <div class="form-col">
+                      <label for="job">Job Title*</label>
+                      <input type="text" name="job" id="job" />
+                    </div>
+                  </div>
+                  <div class="form-row contacts__form-row">
+                    <div class="form-col">
+                      <label for="email">Email Address*</label>
+                      <input type="email" name="email" id="email" />
+                    </div>
+                  </div>
+                  <div class="form-row contacts__form-row">
+                    <div class="form-col">
+                      <label for="industry">Industry *</label>
+                      <div class="form-select _icon-angle-down">
+                        <select name="industry" id="industry">
+                          <option selected disabled>Check Your Industry</option>
+                          <option value="Option 1">Option 1</option>
+                          <option value="Option 2">Option 2</option>
+                          <option value="Option 3">Option 3</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row contacts__form-row">
+                    <div class="form-col">
+                      <label for="comments">Comment*</label>
+                      <textarea
+                        name="comments"
+                        id="comments"
+                        cols="30"
+                        rows="4"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="form-row contacts__form-row">
+                    <button class="orange-button" type="submit">
+                      Get your leads
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="contacts__bottom">
+              <h3 class="black-title contacts__bottom-title">
+                why <span class="orange-text">you</span> should
+                <span class="orange-text">work with</span>
+              </h3>
+              <img
+                class="contacts__bottom-logo"
+                src="@img/logo-small-x1.5.png"
+                alt=""
+              />
+              <ul class="contacts__bottom-list">
+                <li class="_icon-check">
+                  Deep Consumer Learning And AI Technology
+                </li>
+                <li class="_icon-check">Buy The Leads You Want</li>
+                <li class="_icon-check">
+                  No Hidden Fees, Straightforward Pricing
+                </li>
+                <li class="_icon-check">
+                  Full Funnel Development To Improve On Quality
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+      @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+  </body>
+</html>

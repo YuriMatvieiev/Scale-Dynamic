@@ -1,11 +1,13 @@
 //====================================================================================================
 .hero {
-  padding-top: toRem(85);
-  padding-bottom: toRem(98);
-  position: relative;
+  padding-top: toRem(190);
+  padding-bottom: toRem(70);
   @media (max-width: $tablet) {
-    padding-top: toRem(45);
+    padding-top: toRem(150);
     padding-bottom: toRem(45);
+  }
+  @media (max-width: $mobile) {
+    padding-top: toRem(120);
   }
 
   // .hero__container
@@ -14,6 +16,9 @@
     display: flex;
     justify-content: space-between;
     gap: 25px;
+    align-items: center;
+    z-index: 2;
+    position: relative;
     @media (max-width: $tablet) {
       flex-direction: column;
       gap: 60px;
@@ -25,11 +30,9 @@
   // .hero__left
   &__left {
     width: 50%;
-    padding-top: 60px;
     @media (max-width: $tablet) {
       width: 100%;
       text-align: center;
-      padding-top: 0;
     }
   }
   // .hero__title
@@ -69,7 +72,7 @@
     appearance: none;
     outline: none;
     width: 100%;
-    background: transparent;
+    background: #fff;
     cursor: pointer;
 
     &-wrap {
@@ -87,7 +90,6 @@
         right: 22px;
         transform: translate(-50%, -50%);
         font-size: toRem(24);
-        z-index: -1;
       }
     }
   }
@@ -96,12 +98,15 @@
     @include adaptiveValue("max-width", 682, 430, 0, 1750, 991.98);
     display: flex;
     position: relative;
+    margin-right: -50px;
+    @include adaptiveValue("margin-right", -50, 0, 0, 1480, 991.98);
     @media (max-width: $tablet) {
       width: 100%;
       align-self: center;
+      margin-right: 0;
     }
   }
-  &__right-phones {
+  &__right-picture {
     aspect-ratio: 682 / 726;
     object-position: right;
   }
@@ -115,7 +120,7 @@
     font-family: "Oswald";
     font-weight: 600;
     text-align: center;
-    bottom: 50%;
+    bottom: 52%;
     right: -63px;
     border-radius: 16px;
     @include adaptiveValue("right", -20, 0, 0, 1480, 991.98);
@@ -149,7 +154,7 @@
     font-family: "Oswald";
     font-weight: 600;
     text-align: center;
-    bottom: 18%;
+    bottom: 21%;
     left: -10px;
     border-radius: 16px;
     box-shadow: 0px 8px 26px 0px rgba(0, 0, 0, 0.42);
@@ -164,23 +169,23 @@
   &__line {
     position: absolute;
     left: 0;
-    top: 17%;
+    top: 27%;
 
     @include adaptiveValue("width", 114, 72, 0, 1750, 1480);
     @include adaptiveValue("left", 0, -20, 0, 1750, 1480);
-    z-index: -1;
+    z-index: 1;
     @media (max-width: $tablet) {
-      top: 22%;
+      top: 36%;
     }
     @media (max-width: $mobileSmall) {
-      top: 28%;
+      top: 42%;
     }
   }
   &__vertical-text {
     position: absolute;
     // right: -20px;
     @include adaptiveValue("right", -140, -80, 0, 1480, 991.98);
-    top: 37%;
+    top: 35%;
     transform: rotate(-90deg);
     color: $orange;
     font-family: "Oswald";
@@ -188,7 +193,7 @@
     letter-spacing: 1.5px;
     @include adaptiveValue("font-size", 22, 17);
     @media (max-width: $tablet) {
-      top: 40px;
+      top: 6%;
       right: -60px;
       @include adaptiveValue("right", -100, -65, 0, 991.98, 375);
     }
@@ -748,19 +753,22 @@
       text-align: center;
     }
   }
+  &__form-wrap {
+    @include adaptiveValue("max-width", 600, 500, 0, 1480, 991.98);
+    @media (max-width: $tablet) {
+      max-width: 600px;
+    }
+  }
   // .main-contact__form
   &__form {
-    border-radius: 16px;
     background-color: rgb(243, 243, 243);
-    @include adaptiveValue("max-width", 600, 500, 0, 1480, 991.98);
-    width: 100%;
     padding: 55px 40px 40px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    position: relative;
-    overflow: hidden;
+    @media (max-width: $tablet) {
+      padding: 40px;
+    }
+    @media (max-width: $mobile) {
+      padding: 30px 20px;
+    }
     &::after {
       content: "";
       position: absolute;
@@ -770,82 +778,330 @@
       width: 100%;
       background: $orange;
     }
+    input,
+    select,
+    textarea {
+      padding: 17px 12px;
+      box-shadow: inset 0px 1px 10px 0px rgba(0, 0, 0, 0.19);
+    }
+    button {
+      max-width: 300px;
+    }
+  }
+  // .main-contact__form-row
+  &__form-row {
+  }
+  // .main-contact__form-select
+  &__form-select {
+  }
+}
+
+//========================================================================================================================================================
+
+.contact-us {
+  .hero {
+    background-color: #fbf1ee;
+    padding-top: toRem(145);
+    padding-bottom: toRem(25);
+
+    &__right {
+      @include adaptiveValue("margin-right", 50, 0, 0, 1480, 991.98);
+    }
+    &__title {
+      max-width: 400px;
+      @media (max-width: $tablet) {
+        max-width: unset;
+      }
+    }
+    &__line {
+      @media (max-width: $tablet) {
+        top: 20%;
+      }
+    }
+    &__right-picture {
+      aspect-ratio: 574/574;
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.call-action {
+  background-color: #000;
+  padding-top: toRem(95);
+  padding-bottom: toRem(35);
+  @media (max-width: $tablet) {
+    padding-top: toRem(45);
+  }
+  // .call-action__container
+  &__container {
+  }
+  // .call-action__title
+  &__title {
+    margin-bottom: toRem(30);
+    @media (max-width: $mobile) {
+      margin-bottom: toRem(16);
+    }
+  }
+  // .call-action__desc
+  &__desc {
+    color: #fff;
+  }
+}
+//========================================================================================================================================================
+
+.contacts {
+  background: url("@img/contact-us/contact-bg.png") 0 0 / cover no-repeat;
+  padding-top: toRem(105);
+  @media (max-width: $tablet) {
+    padding-top: toRem(45);
+  }
+  // .contacts__container
+  &__container {
+  }
+  // .contacts__top
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    gap: 40px;
     @media (max-width: $tablet) {
-      max-width: 600px;
+      flex-direction: column;
+    }
+  }
+  &__top-woman-img {
+    position: absolute;
+    bottom: 0;
+    transform: translateX(-50%);
+    @include adaptiveValue("right", 473, 385, 0, 1750, 991.98);
+    z-index: 2;
+    @include adaptiveValue("width", 217, 170, 0, 1750, 991.98);
+    @media (max-width: $tablet) {
+      @include adaptiveValue("right", 634, 499, 0, 991.98, 767.98);
+      @include adaptiveValue("width", 170, 145, 0, 991.98, 767.98);
+    }
+    @media (max-width: $mobile) {
+      @include adaptiveValue("right", 499, 329, 0, 767.98, 479.98);
+      @include adaptiveValue("width", 145, 105, 0, 767.98, 479.98);
+    }
+    @media (max-width: $mobileSmall) {
+      display: none;
+    }
+  }
+  // .contacts__top-text
+  &__top-text {
+  }
+  // .contacts__top-title
+  &__top-title {
+    margin-bottom: toRem(10);
+    @media (max-width: $tablet) {
+      text-align: center;
+    }
+  }
+  // .contacts__top-desc
+  &__top-desc {
+    text-align: left;
+    line-height: 170%;
+    margin-bottom: toRem(25);
+    @media (max-width: $tablet) {
+      text-align: center;
+    }
+  }
+  // .contacts__top-info
+  &__top-info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 300px;
+    @media (max-width: $tablet) {
+      max-width: 100%;
+      gap: 25px;
+    }
+  }
+  // .contacts__top-item
+  &__top-item {
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 20px;
+    align-items: center;
+    grid-template-areas:
+      "img title"
+      "img desc";
+    @media (max-width: $tablet) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, auto);
+      gap: 10px;
+      grid-template-areas:
+        "img"
+        "title"
+        "desc";
+      text-align: center;
+    }
+  }
+  &__top-item-icon {
+    grid-area: img;
+    @media (max-width: $tablet) {
+      justify-self: center;
+    }
+  }
+  // .contacts__top-item-title
+  &__top-item-title {
+    grid-area: title;
+    font-family: "Oswald";
+    font-weight: 600;
+    line-height: 120%;
+  }
+  // .contacts__top-item-info
+  &__top-item-info {
+    grid-area: desc;
+    line-height: 140%;
+  }
+  // .contacts__top-item-phone
+  &__top-item-phone {
+    font-family: "Oswald";
+    font-weight: 600;
+    color: $orange;
+    font-size: toRem(32);
+    line-height: 100%;
+    transition: color 0.3s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #dd4e27;
+      }
+    }
+  }
+  // .contacts__top-item-socials
+  &__top-item-socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    @media (max-width: $tablet) {
+      display: none;
+    }
+    li {
+      a {
+        border-radius: 50%;
+        color: $mainColor;
+        border: 2px solid $mainColor;
+        width: toRem(42);
+        height: toRem(42);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        @media (any-hover: hover) {
+          &:hover {
+            background: $orange;
+            border: 2px solid $orange;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  // .contacts__form-wrap
+  &__form-wrap {
+    @include adaptiveValue("max-width", 620, 500, 0, 1750, 991.98);
+    @media (max-width: $tablet) {
+      @include adaptiveValue("max-width", 750, 400, 0, 991.98, 479.98);
+      margin-right: 0;
+      margin-left: auto;
+    }
+    @media (max-width: $mobileSmall) {
+      max-width: unset;
+    }
+  }
+  &__form-title {
+    font-family: "Oswald";
+    font-weight: 600;
+    font-size: toRem(35);
+    color: #fff;
+    background: $orange;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px;
+    letter-spacing: 0.5px;
+  }
+  // .contacts__form
+  &__form {
+    background: #000;
+    padding: 50px 40px 60px;
+    input,
+    select,
+    textarea {
+      padding: 13px 12px;
+    }
+    @media (max-width: $tablet) {
       padding: 40px;
     }
     @media (max-width: $mobile) {
       padding: 30px 20px;
     }
   }
-  // .main-contact__form-row
-  &__form-row {
+  // .contact__bottom
+  &__bottom {
+    background: url("@img/contact-us/contact-global-map-bg.png") center center /
+      cover no-repeat;
     display: flex;
-    justify-content: center;
-    width: 100%;
-    gap: 15px;
-    @media (max-width: $mobileSmall) {
-      flex-direction: column;
-      align-items: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: toRem(-30);
+    padding-top: toRem(140);
+    padding-bottom: toRem(170);
+    @media (max-width: $tablet) {
+      padding-bottom: toRem(100);
+      margin-top: toRem(0);
+      padding-top: toRem(100);
     }
-    input {
-      width: 100%;
-      font-size: toRem(16);
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      border-radius: 5px;
-      background: #fff;
-      line-height: 120%;
-      padding: 17px 12px;
-      box-shadow: inset 0px 1px 10px 0px rgba(0, 0, 0, 0.19);
-      color: $mainColor;
-      outline: none;
-      &::placeholder {
-        color: rgba(0, 0, 0, 0.7);
-      }
-    }
-    select {
-      width: 100%;
-      font-size: toRem(16);
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      border-radius: 5px;
-      background: #fff;
-      box-shadow: inset 0px 1px 10px 0px rgba(0, 0, 0, 0.19);
-      line-height: 120%;
-      padding: 17px 12px;
-      color: rgba(0, 0, 0, 0.7);
-      appearance: none;
-      outline: none;
-      cursor: pointer;
-    }
-    textarea {
-      width: 100%;
-      font-size: toRem(16);
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      border-radius: 5px;
-      background: #fff;
-      box-shadow: inset 0px 1px 10px 0px rgba(0, 0, 0, 0.19);
-      line-height: 120%;
-      padding: 17px 12px;
-      color: $mainColor;
-      outline: none;
-      &::placeholder {
-        color: rgba(0, 0, 0, 0.7);
-      }
-    }
-    button {
-      max-width: 300px;
-      width: 100%;
+    @media (max-width: $mobile) {
+      padding-bottom: toRem(80);
+      padding-top: toRem(80);
     }
   }
-  // .main-contact__form-select
-  &__form-select {
-    position: relative;
-    &::before {
-      position: absolute;
-      top: 50%;
-      right: 22px;
-      transform: translate(-50%, -50%);
-      font-size: toRem(24);
+
+  // .contact__bottom-title
+  &__bottom-title {
+    margin-bottom: toRem(30);
+    text-align: center;
+    @media (max-width: $mobile) {
+      margin-bottom: toRem(16);
+    }
+  }
+  &__bottom-logo {
+    max-width: 300px;
+    @media (max-width: $mobile) {
+      max-width: 230px;
+    }
+  }
+  // .contact__bottom-list
+  &__bottom-list {
+    margin-top: toRem(35);
+    @media (max-width: $mobile) {
+      margin-top: toRem(20);
+    }
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+      @include adaptiveValue("font-size", 25, 20);
+      &::before {
+        background: $orange;
+        color: #fff;
+        width: toRem(25);
+        height: toRem(25);
+        flex: 0 0 25px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: toRem(16);
+      }
+      &:not(:last-child) {
+        margin-bottom: toRem(20);
+      }
     }
   }
 }

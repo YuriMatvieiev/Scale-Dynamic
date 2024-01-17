@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
-  @@include('html/_head.htm',{ "title":"HomePage" })
+  @@include('html/_head.htm',{ "title":"Scale Dynamic" })
   <body>
-    <div class="wrapper">
+    <div class="wrapper home">
       @@include('html/_header.htm',{})
       <main class="page">
         <section class="hero">
@@ -32,7 +32,7 @@
             </div>
             <div class="hero__right">
               <img
-                class="hero__right-phones ibg ibg--contain"
+                class="hero__right-picture ibg ibg--contain"
                 src="@img/home/phones-2.png"
                 alt=""
               />
@@ -140,7 +140,11 @@
               using is that it normal distribution.
             </div>
             <div class="process__wrap">
-              <img src="@img/logo-small.png" alt="" class="process__logo" />
+              <img
+                src="@img/logo-small-x1.5.png"
+                alt=""
+                class="process__logo"
+              />
               <div class="process__pink-circle"></div>
               <div class="process__dashed-circle"></div>
               <div class="process__items">
@@ -291,58 +295,65 @@
                 </div>
               </div>
             </div>
-            <form action="#" class="main-contact__form">
-              <div class="main-contact__form-row">
-                <input placeholder="Name" type="text" name="name" id="name" />
-                <input
-                  placeholder="Company Name"
-                  type="text"
-                  name="company"
-                  id="company"
-                />
-              </div>
-              <div class="main-contact__form-row">
-                <input
-                  placeholder="Phone"
-                  type="text"
-                  name="phone"
-                  id="phone"
-                />
-                <input placeholder="Job Tile" type="text" name="job" id="job" />
-              </div>
-              <div class="main-contact__form-row">
-                <input
-                  placeholder="Email Address"
-                  type="email"
-                  name="email"
-                  id="email"
-                />
-              </div>
-              <div
-                class="main-contact__form-row main-contact__form-select _icon-angle-down"
-              >
-                <select name="industry" id="industry">
-                  <option selected disabled>Check Your Industry</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                  <option value="Option 3">Option 3</option>
-                </select>
-              </div>
-              <div class="main-contact__form-row">
-                <textarea
-                  name="comments"
-                  placeholder="Comments"
-                  id="comments"
-                  cols="30"
-                  rows="5"
-                ></textarea>
-              </div>
-              <div class="main-contact__form-row">
-                <button class="orange-button" type="submit">
-                  Get your leads
-                </button>
-              </div>
-            </form>
+            <div class="form-wrap main-contact__form-wrap">
+              <form action="#" class="form main-contact__form">
+                <div class="form-row main-contact__form-row">
+                  <input placeholder="Name" type="text" name="name" id="name" />
+                  <input
+                    placeholder="Company Name"
+                    type="text"
+                    name="company"
+                    id="company"
+                  />
+                </div>
+                <div class="form-row main-contact__form-row">
+                  <input
+                    placeholder="Phone"
+                    type="text"
+                    name="phone"
+                    id="phone"
+                  />
+                  <input
+                    placeholder="Job Tile"
+                    type="text"
+                    name="job"
+                    id="job"
+                  />
+                </div>
+                <div class="form-row main-contact__form-row">
+                  <input
+                    placeholder="Email Address"
+                    type="email"
+                    name="email"
+                    id="email"
+                  />
+                </div>
+                <div
+                  class="form-row form-select main-contact__form-row main-contact__form-select _icon-angle-down"
+                >
+                  <select name="industry" id="industry">
+                    <option selected disabled>Check Your Industry</option>
+                    <option value="Option 1">Option 1</option>
+                    <option value="Option 2">Option 2</option>
+                    <option value="Option 3">Option 3</option>
+                  </select>
+                </div>
+                <div class="form-row main-contact__form-row">
+                  <textarea
+                    name="comments"
+                    placeholder="Comments"
+                    id="comments"
+                    cols="30"
+                    rows="5"
+                  ></textarea>
+                </div>
+                <div class="form-row main-contact__form-row">
+                  <button class="orange-button" type="submit">
+                    Get your leads
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </section>
       </main>

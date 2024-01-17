@@ -130,7 +130,7 @@
   &__menu-links {
     li {
       &:not(:last-child) {
-        margin-bottom: toRem(25);
+        margin-bottom: toRem(20);
       }
     }
     &-socials {
@@ -142,6 +142,7 @@
     }
     a {
       font-size: toRem(17);
+      line-height: 120%;
       color: $gray;
       display: flex;
       gap: 8px;
@@ -189,6 +190,7 @@
   &__copy {
     font-size: toRem(17);
     color: $gray;
+    line-height: 120%;
   }
   // .footer__terms
   &__terms {
