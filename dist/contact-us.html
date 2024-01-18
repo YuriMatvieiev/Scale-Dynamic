@@ -6,7 +6,7 @@
 	<meta charset="UTF-8" />
 	<meta name="format-detection" content="telephone=no" />
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240117235531" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20240118224547" />
 	<link rel="shortcut icon" href="favicon.ico" />
 	<meta name="robots" content="noindex, nofollow" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -48,16 +48,22 @@
 								<li class="menu__item">
 									<button class="menu__link _icon-caret-down">Solutions</button>
 									<ul class="menu__item-submenu">
-										<li><a href="#" class="menu__link">Lead Generation</a></li>
-										<li><a href="#" class="menu__link">Managed Media Buys</a></li>
-										<li><a href="#" class="menu__link">Creative Production</a></li>
+										<li>
+											<a href="lead-generation.html" class="menu__link">Lead Generation</a>
+										</li>
+										<li>
+											<a href="managed-media-buys.html" class="menu__link">Managed Media Buys</a>
+										</li>
+										<li>
+											<a href="creative-production.html" class="menu__link">Creative Production</a>
+										</li>
 									</ul>
 								</li>
 							</ul>
 							<a href="contact-us.html" class="orange-button header__coontact">Contact Us</a>
 						</nav>
 						<div class="header__menu menu">
-							<button type="button" class="menu__icon icon-menu">
+							<button id="burger-menu" type="button" class="menu__icon icon-menu">
 								<span></span>
 								<span></span>
 								<span></span>
@@ -81,9 +87,13 @@
 						<div class="hero__select-wrap _icon-angle-down">
 							<select name="solution" id="solution" class="hero__select">
 								<option selected disabled>Check Your Industry</option>
-								<option value="Option 1">Option 1</option>
-								<option value="Option 2">Option 2</option>
-								<option value="Option 3">Option 3</option>
+								<option value="lead-generation.html">Lead Generation</option>
+								<option value="managed-media-buys.html">
+									Managed Media Buys
+								</option>
+								<option value="creative-production.html">
+									Creative Production
+								</option>
 							</select>
 						</div>
 					</div>
@@ -108,7 +118,7 @@
 			<section class="contacts">
 				<div class="contacts__container">
 					<div class="contacts__top">
-						<picture><source srcset="img/contact-us/contact-woman.webp" type="image/webp"><img class="contacts__top-woman-img" src="img/contact-us/contact-woman.png" alt="" /></picture>
+						<picture><source srcset="img/contact-us/contact-woman.webp" type="image/webp"><img class="contacts__people-img" src="img/contact-us/contact-woman.png" alt="" /></picture>
 						<div class="contacts__top-text">
 							<h3 class="black-title contacts__top-title">
 								<span class="orange-text">Let’s get</span> started
@@ -139,44 +149,54 @@
 									</div>
 								</div>
 								<ul class="contacts__top-item-socials">
-									<li><a class="_icon-facebook" href="#"></a></li>
-									<li><a class="_icon-linkedin" href="#"></a></li>
-									<li><a class="_icon-twitter" href="#"></a></li>
-									<li><a class="_icon-instagram" href="#"></a></li>
+									<li>
+										<a class="_icon-facebook" target="_blank" href="#"></a>
+									</li>
+									<li>
+										<a class="_icon-linkedin" target="_blank" href="#"></a>
+									</li>
+									<li>
+										<a class="_icon-twitter" target="_blank" href="#"></a>
+									</li>
+									<li>
+										<a class="_icon-instagram" target="_blank" href="#"></a>
+									</li>
 								</ul>
 							</div>
 						</div>
 						<div class="form-wrap contacts__form-wrap">
-							<div class="contacts__form-title">Let's Talk Growth</div>
+							<div class="form-title contacts__form-title">
+								Let's Talk Growth
+							</div>
 							<form action="#" class="form contacts__form">
 								<div class="form-row contacts__form-row">
-									<div class="form-col">
+									<div class="form-col contacts__form-col">
 										<label for="name">Full Name*</label>
 										<input type="text" name="name" id="name" />
 									</div>
-									<div class="form-col">
+									<div class="form-col contacts__form-col">
 										<label for="company">Company Name*</label>
 										<input type="text" name="company" id="company" />
 									</div>
 								</div>
 								<div class="form-row contacts__form-row">
-									<div class="form-col">
+									<div class="form-col contacts__form-col">
 										<label for="phone">Phone Number*</label>
 										<input type="text" name="phone" id="phone" />
 									</div>
-									<div class="form-col">
+									<div class="form-col contacts__form-col">
 										<label for="job">Job Title*</label>
 										<input type="text" name="job" id="job" />
 									</div>
 								</div>
 								<div class="form-row contacts__form-row">
-									<div class="form-col">
+									<div class="form-col contacts__form-col">
 										<label for="email">Email Address*</label>
 										<input type="email" name="email" id="email" />
 									</div>
 								</div>
 								<div class="form-row contacts__form-row">
-									<div class="form-col">
+									<div class="form-col contacts__form-col">
 										<label for="industry">Industry *</label>
 										<div class="form-select _icon-angle-down">
 											<select name="industry" id="industry">
@@ -189,7 +209,7 @@
 									</div>
 								</div>
 								<div class="form-row contacts__form-row">
-									<div class="form-col">
+									<div class="form-col contacts__form-col">
 										<label for="comments">Comment*</label>
 										<textarea name="comments" id="comments" cols="30" rows="4"></textarea>
 									</div>
@@ -237,7 +257,7 @@
 							<div class="footer__menu-title">Our Links</div>
 							<ul class="footer__menu-links">
 								<li><a href="#">Home</a></li>
-								<li><a href="#">Solutions</a></li>
+								<li><a href="lead-generation.html">Solutions</a></li>
 								<li><a href="#">About Us</a></li>
 								<li><a href="contact-us.html">Contact Us</a></li>
 							</ul>
@@ -245,18 +265,26 @@
 						<nav class="footer__menu-item">
 							<div class="footer__menu-title">Solutions</div>
 							<ul class="footer__menu-links">
-								<li><a href="#">Lead Generation</a></li>
-								<li><a href="#">Managed Media Buys</a></li>
-								<li><a href="#">Creative Production</a></li>
+								<li><a href="lead-generation.html">Lead Generation</a></li>
+								<li><a href="managed-media-buys.html">Managed Media Buys</a></li>
+								<li><a href="creative-production.html">Creative Production</a></li>
 							</ul>
 						</nav>
 						<nav class="footer__menu-item">
 							<div class="footer__menu-title">we’re social</div>
 							<ul class="footer__menu-links footer__menu-links-socials">
-								<li><a class="_icon-facebook" href="#">Facebook</a></li>
-								<li><a class="_icon-linkedin" href="#">Linkedin</a></li>
-								<li><a class="_icon-twitter" href="#">Twitter</a></li>
-								<li><a class="_icon-instagram" href="#">Instagram</a></li>
+								<li>
+									<a class="_icon-facebook" target="_blank" href="#">Facebook</a>
+								</li>
+								<li>
+									<a class="_icon-linkedin" target="_blank" href="#">Linkedin</a>
+								</li>
+								<li>
+									<a class="_icon-twitter" target="_blank" href="#">Twitter</a>
+								</li>
+								<li>
+									<a class="_icon-instagram" target="_blank" href="#">Instagram</a>
+								</li>
 							</ul>
 						</nav>
 					</div>
@@ -274,7 +302,7 @@
 		</footer>
 
 	</div>
-	<script src="js/app.min.js?_v=20240117235531"></script>
+	<script src="js/app.min.js?_v=20240118224547"></script>
 </body>
 
 </html>

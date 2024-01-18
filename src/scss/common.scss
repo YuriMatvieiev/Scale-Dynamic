@@ -79,7 +79,14 @@
   align-items: center;
   gap: 15px;
   position: relative;
+  &-title {
+    font-family: "Oswald";
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
 
+    letter-spacing: 0.5px;
+  }
   &-wrap {
     width: 100%;
     border-radius: 16px;
@@ -95,8 +102,7 @@
       align-items: center;
     }
     label {
-      font-weight: 500;
-      color: #fff;
+      @include adaptiveValue("font-size", 18, 15);
     }
     input {
       width: 100%;
@@ -107,8 +113,12 @@
       line-height: 120%;
       color: $mainColor;
       outline: none;
+      transition: border 0.3s;
       &::placeholder {
         color: rgba(0, 0, 0, 0.7);
+      }
+      &:focus {
+        border: 1px solid $orange;
       }
     }
     select {
@@ -122,6 +132,10 @@
       appearance: none;
       outline: none;
       cursor: pointer;
+      transition: border 0.3s;
+      &:focus {
+        border: 1px solid $orange;
+      }
     }
     textarea {
       width: 100%;
@@ -133,8 +147,12 @@
       line-height: 120%;
       color: $mainColor;
       outline: none;
+      transition: border 0.3s;
       &::placeholder {
         color: rgba(0, 0, 0, 0.7);
+      }
+      &:focus {
+        border: 1px solid $orange;
       }
     }
     button {
@@ -145,10 +163,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    @media (max-width: $mobile) {
-      gap: 10px;
-    }
   }
   &-select {
     position: relative;

@@ -47,6 +47,37 @@
     margin-bottom: toRem(40);
     letter-spacing: 0.4px;
   }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    @media (max-width: $tablet) {
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: $mobile) {
+      gap: 15px;
+    }
+    li {
+      font-family: "Oswald";
+      font-weight: 500;
+      font-size: toRem(20);
+      color: $orange;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      letter-spacing: 0.5px;
+      @media (max-width: $mobile) {
+        font-size: toRem(18);
+      }
+      img {
+        width: toRem(19);
+        height: toRem(19);
+      }
+    }
+  }
   // .hero__select-title
   &__select-title {
     color: $orange;
@@ -70,11 +101,15 @@
     border-radius: 30px;
     letter-spacing: 0.5px;
     appearance: none;
+    -webkit-appearance: none;
     outline: none;
     width: 100%;
     background: #fff;
     cursor: pointer;
-
+    transition: border 0.3s;
+    &:focus {
+      border: 1px solid $orange;
+    }
     &-wrap {
       position: relative;
       width: 100%;
@@ -584,6 +619,108 @@
       }
     }
   }
+  // .process__cards
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 30px 50px;
+
+    grid-auto-flow: column;
+    position: relative;
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 10px;
+      max-width: 500px;
+      justify-items: center;
+      margin: 0 auto;
+    }
+  }
+  // .process__card
+  &__card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    @include adaptiveValue("padding", 30, 15);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 20px;
+    align-items: center;
+    grid-template-areas:
+      "img title"
+      "img desc";
+    position: relative;
+    overflow: hidden;
+    @media (max-width: $mobile) {
+      grid-column: 1;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 100%;
+      background: #000;
+    }
+    &:nth-child(odd) {
+      .process__card-img {
+        background: $orange;
+      }
+    }
+    &:nth-child(even) {
+      .process__card-img {
+        background: #000;
+      }
+    }
+  }
+  // .process__card-img
+  &__card-img {
+    grid-area: img;
+    // width: toRem(120);
+    // height: toRem(120);
+    @include adaptiveValue("width", 120, 70);
+    @include adaptiveValue("height", 120, 70);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      //   max-width: 80px;
+      @include adaptiveValue("max-width", 80, 40);
+    }
+  }
+  // .process__card-title
+  &__card-title {
+    grid-area: title;
+    font-family: "Oswald";
+    font-weight: 500;
+    @include adaptiveValue("font-size", 26, 22);
+    align-self: center;
+  }
+  // .process__card-desc
+  &__card-desc {
+    grid-area: desc;
+    @include adaptiveValue("font-size", 20, 17);
+    color: $gray;
+    align-self: flex-start;
+    line-height: 120%;
+  }
+  &__man-img {
+    position: absolute;
+    right: 135px;
+    bottom: -245px;
+    @include adaptiveValue("right", 135, 20, 0, 1480, 767.98);
+    @include adaptiveValue("bottom", -245, -120, 0, 1480, 767.98);
+    @include adaptiveValue("width", 424, 270, 0, 1480, 767.98);
+    @media (max-width: $mobile) {
+      grid-column: 1;
+      position: static;
+      transform: translateY(30px);
+    }
+  }
 }
 
 //========================================================================================================================================================
@@ -803,6 +940,9 @@
     background-color: #fbf1ee;
     padding-top: toRem(145);
     padding-bottom: toRem(25);
+    @media (max-width: $mobile) {
+      padding-top: toRem(120);
+    }
 
     &__right {
       @include adaptiveValue("margin-right", 50, 0, 0, 1480, 991.98);
@@ -870,13 +1010,13 @@
       flex-direction: column;
     }
   }
-  &__top-woman-img {
+  &__people-img {
     position: absolute;
     bottom: 0;
     transform: translateX(-50%);
-    @include adaptiveValue("right", 473, 385, 0, 1750, 991.98);
+    @include adaptiveValue("right", 473, 385, 0, 1480, 991.98);
     z-index: 2;
-    @include adaptiveValue("width", 217, 170, 0, 1750, 991.98);
+    @include adaptiveValue("width", 217, 170, 0, 1480, 991.98);
     @media (max-width: $tablet) {
       @include adaptiveValue("right", 634, 499, 0, 991.98, 767.98);
       @include adaptiveValue("width", 170, 145, 0, 991.98, 767.98);
@@ -1003,7 +1143,7 @@
   }
   // .contacts__form-wrap
   &__form-wrap {
-    @include adaptiveValue("max-width", 620, 500, 0, 1750, 991.98);
+    @include adaptiveValue("max-width", 620, 500, 0, 1480, 991.98);
     @media (max-width: $tablet) {
       @include adaptiveValue("max-width", 750, 400, 0, 991.98, 479.98);
       margin-right: 0;
@@ -1014,20 +1154,20 @@
     }
   }
   &__form-title {
-    font-family: "Oswald";
-    font-weight: 600;
-    font-size: toRem(35);
-    color: #fff;
     background: $orange;
-    text-transform: uppercase;
-    text-align: center;
     padding: 20px;
-    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    @include adaptiveValue("font-size", 35, 25);
   }
   // .contacts__form
   &__form {
     background: #000;
     padding: 50px 40px 60px;
+
+    label {
+      color: #fff;
+      font-weight: 500;
+    }
     input,
     select,
     textarea {
@@ -1038,6 +1178,12 @@
     }
     @media (max-width: $mobile) {
       padding: 30px 20px;
+    }
+    &-col {
+      gap: 15px;
+      @media (max-width: $mobile) {
+        gap: 10px;
+      }
     }
   }
   // .contact__bottom
@@ -1102,6 +1248,370 @@
       &:not(:last-child) {
         margin-bottom: toRem(20);
       }
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.solutions {
+  .hero {
+    background-color: #fbf1ee;
+    padding-top: toRem(150);
+    padding-bottom: toRem(85);
+    @media (max-width: $tablet) {
+      padding-bottom: toRem(70);
+    }
+    @media (max-width: $mobile) {
+      padding-top: toRem(120);
+      padding-bottom: toRem(45);
+    }
+
+    &__right {
+      margin-right: 0;
+    }
+    &__title {
+      max-width: 550px;
+      margin-bottom: toRem(16);
+      @media (max-width: $tablet) {
+        max-width: unset;
+      }
+    }
+    &__subtitle {
+      @include adaptiveValue("max-width", 540, 440, 0, 1480, 991.98);
+      margin-bottom: toRem(20);
+      @media (max-width: $tablet) {
+        max-width: 550px;
+        margin: 0 auto 20px;
+      }
+    }
+    &__line {
+      @media (max-width: $tablet) {
+        top: 20%;
+      }
+    }
+    // .hero__select-title
+    &__select-title {
+      text-align: center;
+      color: #fff;
+      @include adaptiveValue("font-size", 25, 20);
+    }
+    // .hero__select-wrap
+    &__select-wrap {
+      margin: 0 auto;
+      max-width: 770px;
+    }
+    // .hero__select
+    &__select {
+    }
+  }
+  // .solutions__form-wrap
+  &__form-wrap {
+    @include adaptiveValue("max-width", 530, 450, 0, 1480, 991.98);
+    @media (max-width: $tablet) {
+      @include adaptiveValue("max-width", 750, 400, 0, 991.98, 479.98);
+      margin-right: 0;
+      margin-left: auto;
+    }
+    @media (max-width: $mobileSmall) {
+      max-width: unset;
+    }
+  }
+  // .solutions__form-title
+  &__form-title {
+    background: #5e5e5e;
+    padding: 15px;
+    line-height: 140%;
+    @include adaptiveValue("font-size", 26, 18);
+  }
+  // .solutions__form
+  &__form {
+    background: #fff;
+    padding: 20px 30px;
+    @media (max-width: $tablet) {
+      padding: 20px;
+    }
+
+    label {
+      font-family: "Oswald";
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      line-height: 110%;
+    }
+    input,
+    select,
+    textarea {
+      padding: 10px 12px;
+    }
+  }
+  &__form-col {
+    gap: 10px;
+  }
+  // .solutions__form-row
+  &__form-row {
+  }
+  .contacts__people-img {
+    bottom: -120px;
+    @include adaptiveValue("right", 470, 380, 0, 1480, 991.98);
+    @include adaptiveValue("width", 191, 140, 0, 1480, 991.98);
+    @media (max-width: $tablet) {
+      @include adaptiveValue("right", 690, 540, 0, 991.98, 767.98);
+      @include adaptiveValue("width", 170, 145, 0, 991.98, 767.98);
+      bottom: -100px;
+    }
+    @media (max-width: $mobile) {
+      @include adaptiveValue("right", 540, 370, 0, 767.98, 479.98);
+      @include adaptiveValue("width", 145, 90, 0, 767.98, 479.98);
+      bottom: -70px;
+    }
+    @media (max-width: $mobileSmall) {
+      display: none;
+    }
+  }
+  .who-we {
+    background: #000;
+    padding-bottom: toRem(140);
+    @media (max-width: $tablet) {
+      padding-bottom: toRem(60);
+    }
+    &__title {
+      max-width: 800px;
+      margin: 0 auto 13px;
+      line-height: 130%;
+    }
+    &__desc {
+      max-width: 900px;
+      margin-bottom: toRem(50);
+    }
+    &__items {
+      gap: 25px;
+      width: 100%;
+      margin-bottom: 0;
+      @media (max-width: $mobile) {
+        gap: 20px;
+      }
+    }
+    &__item {
+      @include adaptiveValue("padding-top", 60, 30);
+      @include adaptiveValue("padding-left", 30, 15);
+      @include adaptiveValue("padding-right", 30, 15);
+      @include adaptiveValue("padding-bottom", 40, 20);
+      @media (max-width: $tablet) {
+        width: calc(50% - 25px / 2);
+      }
+      @media (max-width: $mobile) {
+        width: 100%;
+      }
+
+      &:nth-child(even) {
+        transform: translateY(30px);
+        @media (max-width: $tablet) {
+          transform: translateY(0);
+        }
+        &::after {
+          display: none;
+        }
+      }
+      &-title {
+        font-size: toRem(30);
+        text-transform: uppercase;
+        margin-bottom: toRem(14);
+        max-width: unset;
+        @media (max-width: $mobile) {
+          font-size: toRem(24);
+        }
+      }
+      &-desc {
+        letter-spacing: 1px;
+        line-height: 130%;
+      }
+    }
+    &__number {
+      font-family: "Oswald";
+      font-weight: 600;
+      @include adaptiveValue("font-size", 70, 50);
+      color: $orange;
+      margin-bottom: toRem(20);
+      @media (max-width: $mobile) {
+        margin-bottom: toRem(10);
+      }
+    }
+  }
+  .process {
+    padding-top: toRem(75);
+    @include adaptiveValue("padding-bottom", 180, 70, 0, 1480, 767.98);
+    @media (max-width: $tablet) {
+      padding-top: toRem(30);
+    }
+    @media (max-width: $mobile) {
+      padding-top: toRem(10);
+      padding-bottom: 0;
+    }
+    // .process__wave
+    &__wave {
+    }
+    // .process__container
+    &__container {
+    }
+    // .process__title
+    &__title {
+      text-align: left;
+      margin-bottom: toRem(10);
+      @media (max-width: $mobile) {
+        text-align: center;
+      }
+    }
+    // .process__desc
+    &__desc {
+      text-align: left;
+      line-height: 160%;
+      margin-bottom: toRem(40);
+      @media (max-width: $mobile) {
+        margin-bottom: toRem(20);
+        text-align: center;
+      }
+    }
+  }
+  .why-us {
+    padding-top: toRem(150);
+    padding-bottom: toRem(152);
+    @media (max-width: $tablet) {
+      padding-top: toRem(100);
+      padding-bottom: toRem(100);
+    }
+    // .why-us__container
+    &__container {
+    }
+    // .why-us__title
+    &__title {
+    }
+    // .why-us__desc
+    &__desc {
+      margin-bottom: toRem(30);
+    }
+  }
+}
+//========================================================================================================================================================
+
+.different {
+  background: url("@img/home/deliver-bg.png") 0 0 / cover no-repeat;
+  padding-top: toRem(110);
+  padding-bottom: toRem(160);
+  @media (max-width: $tablet) {
+    padding-top: toRem(45);
+    padding-bottom: toRem(100);
+  }
+  // .different__container
+  &__container {
+    display: flex;
+    @include adaptiveValue("gap", 75, 40, 0, 1480, 991.98);
+    align-items: center;
+    @media (max-width: $tablet) {
+      flex-direction: column-reverse;
+    }
+  }
+  // .different__img-wrap
+  &__img-wrap {
+    @include adaptiveValue("width", 630, 360, 0, 1480, 991.98);
+    @include adaptiveValue("margin-left", -30, 0, 0, 1480, 991.98);
+    flex: 0 0 auto;
+    @media (max-width: $tablet) {
+      max-width: 600px;
+      width: 100%;
+    }
+    @media (max-width: $mobile) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  // .different__img
+  &__img {
+    width: 100%;
+    @media (max-width: $mobile) {
+      width: 90%;
+      margin-bottom: toRem(24);
+    }
+  }
+  // .different__text
+  &__text {
+    @media (max-width: $tablet) {
+      text-align: center;
+    }
+  }
+  // .different__title
+  &__title {
+    margin-bottom: toRem(20);
+    @media (max-width: $mobile) {
+      margin-bottom: toRem(14);
+    }
+  }
+  // .different__subtitle
+  &__subtitle {
+    line-height: 180%;
+    @include adaptiveValue("font-size", 20, 15);
+    text-align: left;
+    margin-bottom: toRem(20);
+    @media (max-width: $tablet) {
+      text-align: center;
+    }
+    @media (max-width: $mobile) {
+      margin-bottom: toRem(14);
+    }
+  }
+  // .different__desc
+  &__desc {
+    text-align: left;
+    line-height: 200%;
+    @include adaptiveValue("font-size", 18, 15);
+    margin-bottom: toRem(20);
+    @media (max-width: $tablet) {
+      text-align: center;
+    }
+    @media (max-width: $mobile) {
+      margin-bottom: toRem(14);
+    }
+  }
+  // .different__items
+  &__items {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    margin-bottom: toRem(24);
+    @media (max-width: $mobile) {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 0;
+    }
+  }
+  // .different__item
+  &__item {
+    padding: 16px 10px 16px 10px;
+    font-family: "Oswald";
+    font-weight: 500;
+    @include adaptiveValue("font-size", 16, 14);
+    line-height: 130%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    @media (max-width: $mobile) {
+      width: calc(50% - 4px);
+    }
+    @media (max-width: $mobileSmall) {
+      width: 100%;
+    }
+    img {
+      max-width: 27px;
+      @media (max-width: $mobileSmall) {
+        max-width: 22px;
+      }
+    }
+  }
+  // .different__button
+  &__button {
+    @media (max-width: $mobile) {
+      text-align: center;
     }
   }
 }
