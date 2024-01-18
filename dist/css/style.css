@@ -927,10 +927,8 @@ h6 {
   letter-spacing: 1.5px;
 }
 
-.no-webp .who-we{
-  background: url("../img/home/who-we-bg.png") 0 0/cover no-repeat; }
-
 .who-we {
+  background: url("../img/home/who-we-bg.png") 0 0/cover no-repeat;
   padding-top: 6.5625rem;
   padding-bottom: 6.25rem;
 }
@@ -1017,10 +1015,8 @@ h6 {
   line-height: 155%;
 }
 
-.no-webp .deliver{
-  background: url("../img/home/deliver-bg.png") 0 0/cover no-repeat; }
-
 .deliver {
+  background: url("../img/home/deliver-bg.png") 0 0/cover no-repeat;
   padding-top: 6.5625rem;
   padding-bottom: 10.3125rem;
 }
@@ -1356,10 +1352,8 @@ h6 {
   bottom: -245px;
 }
 
-.no-webp .why-us{
-  background: url("../img/home/why-us-bg.png") center/cover no-repeat; }
-
 .why-us {
+  background: url("../img/home/why-us-bg.png") center/cover no-repeat;
   padding-top: 6.5625rem;
   padding-bottom: 6.875rem;
 }
@@ -1404,10 +1398,8 @@ h6 {
   color: rgba(0, 0, 0, 0.88);
 }
 
-.no-webp .main-contact{
-  background: url("../img/home/contacts-bg.png") center/cover no-repeat; }
-
 .main-contact {
+  background: url("../img/home/contacts-bg.png") center/cover no-repeat;
   padding-top: 6.875rem;
   padding-bottom: 6.875rem;
 }
@@ -1532,10 +1524,8 @@ h6 {
   color: #fff;
 }
 
-.no-webp .contacts{
-  background: url("../img/contact-us/contact-bg.png") 0 0/cover no-repeat; }
-
 .contacts {
+  background: url("../img/contact-us/contact-bg.png") 0 0/cover no-repeat;
   padding-top: 6.5625rem;
 }
 
@@ -1702,10 +1692,8 @@ h6 {
   gap: 15px;
 }
 
-.no-webp .contacts__bottom{
-  background: url("../img/contact-us/contact-global-map-bg.png") center center/cover no-repeat; }
-
 .contacts__bottom {
+  background: url("../img/contact-us/contact-global-map-bg.png") center center/cover no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1906,10 +1894,8 @@ h6 {
   margin-bottom: 1.875rem;
 }
 
-.no-webp .different{
-  background: url("../img/home/deliver-bg.png") 0 0/cover no-repeat; }
-
 .different {
+  background: url("../img/home/deliver-bg.png") 0 0/cover no-repeat;
   padding-top: 6.875rem;
   padding-bottom: 10rem;
 }
@@ -4533,17 +4519,3 @@ h6 {
     color: #fff;
   }
 }
-
-.webp .who-we{ background: url(../img/home/who-we-bg.webp) 0 0/cover no-repeat; }
-
-.webp .deliver{ background: url(../img/home/deliver-bg.webp) 0 0/cover no-repeat; }
-
-.webp .why-us{ background: url(../img/home/why-us-bg.webp) center/cover no-repeat; }
-
-.webp .main-contact{ background: url(../img/home/contacts-bg.webp) center/cover no-repeat; }
-
-.webp .contacts{ background: url(../img/contact-us/contact-bg.webp) 0 0/cover no-repeat; }
-
-.webp .contacts__bottom{ background: url(../img/contact-us/contact-global-map-bg.webp) center center/cover no-repeat; }
-
-.webp .different{ background: url(../img/home/deliver-bg.webp) 0 0/cover no-repeat; }
