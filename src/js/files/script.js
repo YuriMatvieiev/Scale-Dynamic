@@ -38,9 +38,16 @@ if (submenu) {
   });
 }
 
-document.getElementById("solution").addEventListener("change", function () {
-  var selectedOption = this.options[this.selectedIndex];
-  if (selectedOption.value && selectedOption.value !== "Check Your Industry") {
-    window.location.href = selectedOption.value;
-  }
-});
+const select = document.getElementById("solution");
+
+if (select) {
+  select.addEventListener("change", function () {
+    var selectedOption = this.options[this.selectedIndex];
+    if (
+      selectedOption.value &&
+      selectedOption.value !== "Check Your Industry"
+    ) {
+      window.location.href = selectedOption.value;
+    }
+  });
+}

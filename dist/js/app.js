@@ -569,7 +569,8 @@
                 toggleSubmenu();
             }));
         }
-        document.getElementById("solution").addEventListener("change", (function() {
+        const script_select = document.getElementById("solution");
+        if (script_select) script_select.addEventListener("change", (function() {
             var selectedOption = this.options[this.selectedIndex];
             if (selectedOption.value && selectedOption.value !== "Check Your Industry") window.location.href = selectedOption.value;
         }));
